@@ -27,7 +27,7 @@ Using GitHub Desktop or the command line, clone your copy of the repo to downloa
 Using GitHub Desktop or the command line, navigate to the local repo (for example if on the Desktop):
 
 ```sh
-cd ~/Desktop/flask-sheets-template-2024
+cd ~/Desktop/flask-sheets-template
 ```
 
 > NOTE: it is important to navigate to the root directory before running any of the commands below.
@@ -35,27 +35,18 @@ cd ~/Desktop/flask-sheets-template-2024
 
 ### Virtual Environment Setup
 
-Create new Anaconda virtual environment (first time only):
+1. Install the `uv` package, which is a lightweight virtual environment manager for Python:
 
 ```sh
-conda create -n flask-sheets-2024 python=3.10
+pip install uv
 ```
 
-Activate the virtual environment (first time, or whenever you return to the project):
+2. Create a virtual environment for this project, using the `uv` command:
 
 ```sh
-conda activate flask-sheets-2024
+uv venv
+uv sync
 ```
-
-> NOTE: it is important to activate the virual environment before running any of the commands below.
-
-Install package dependencies (first time only):
-
-```sh
-pip install -r requirements.txt
-```
-
-> NOTE: if you see an error after running this package installation command, make sure you have first navigated to the root directory of your local repository, where the "requirements.txt" file exists.
 
 ### Services Setup
 
@@ -129,7 +120,7 @@ This should populate the sheet with the following records:
 Run the local web server (then visit http://localhost:5000 in a browser):
 
 ```sh
-FLASK_APP=web_app flask run
+uv run flask --app web_app run --debug
 ```
 
 > NOTE: if you run into issues seeting the site at the localhost:5000 address, try 127.0.0.1:5000 instead!
