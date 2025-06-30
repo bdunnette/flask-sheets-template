@@ -1,7 +1,8 @@
-
+# -*- coding: utf-8 -*-
 from app.models.order import Order
 
 from conftest import GOOGLE_SHEETS_TEST_DOCUMENT_ID
+
 
 def test_orders(model_context):
     # model context ensures tests are using data from the test document:

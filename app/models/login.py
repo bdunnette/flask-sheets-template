@@ -1,7 +1,7 @@
-
-#from app.db import BaseModel
+# -*- coding: utf-8 -*-
+# from app.db import BaseModel
 #
-#class Login(BaseModel):
+# class Login(BaseModel):
 #
 #    SHEET_NAME = "logins"
 #

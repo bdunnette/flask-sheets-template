@@ -1,5 +1,12 @@
-
-from flask import Blueprint, render_template, flash, redirect, current_app, url_for, session, request #, jsonify
+# -*- coding: utf-8 -*-
+from flask import (
+    Blueprint,
+    render_template,
+    flash,
+    redirect,
+    session,
+    request,
+)  # , jsonify
 
 from app.models.order import Order
 from web_app.routes.wrappers import authenticated_route
@@ -9,6 +16,7 @@ order_routes = Blueprint("order_routes", __name__)
 #
 # USER ORDERS
 #
+
 
 @order_routes.route("/user/orders")
 @authenticated_route
@@ -40,14 +48,14 @@ def create_order():
             "user_email": user_email,
             "product_id": int(product_id),
             "product_name": product_name,
-            "product_price": float(product_price)
+            "product_price": float(product_price),
         }
-        #order = Order(params)
-        #order.save()
+        # order = Order(params)
+        # order.save()
         # alternatively:
         Order.create(params)
 
-        flash(f"Order received!", "success")
+        flash("Order received!", "success")
         return redirect("/user/orders")
     except Exception as err:
         print(err)

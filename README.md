@@ -1,4 +1,6 @@
-# flask-sheets-template-2024
+# flask-sheets-template
+
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/bdunnette/flask-sheets-template/main.svg)](https://results.pre-commit.ci/latest/github/bdunnette/flask-sheets-template/main)
 
 A web application starter template, created in Python with the Flask framework. Allows users to login with their Google accounts (via OAuth). Interfaces with a Google Sheets database.
 

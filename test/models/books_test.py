@@ -1,11 +1,11 @@
-
-#from datetime import datetime
+# -*- coding: utf-8 -*-
+# from datetime import datetime
 #
-#from app.models.book import Book
+# from app.models.book import Book
 #
-#from conftest import GOOGLE_SHEETS_TEST_DOCUMENT_ID
+# from conftest import GOOGLE_SHEETS_TEST_DOCUMENT_ID
 #
-#def test_books(model_context):
+# def test_books(model_context):
 #    # model context ensures tests are using data from the test document:
 #    assert Book.service.document_id == GOOGLE_SHEETS_TEST_DOCUMENT_ID
 #

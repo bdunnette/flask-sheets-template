@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 import pytest
 import os
 from time import sleep
@@ -15,15 +15,16 @@ from web_app import create_app
 load_dotenv()
 
 # an example sheet that is being used for testing purposes:
-GOOGLE_SHEETS_TEST_DOCUMENT_ID= os.getenv("GOOGLE_SHEETS_TEST_DOCUMENT_ID")
+GOOGLE_SHEETS_TEST_DOCUMENT_ID = os.getenv("GOOGLE_SHEETS_TEST_DOCUMENT_ID")
 TEST_SLEEP = int(os.getenv("TEST_SLEEP", default="3"))
+
 
 @pytest.fixture()
 def service():
     """Spreadsheet service connected to the test document. Sleeps to avoid rate limits."""
     ss = SpreadsheetService(
         credentials_filepath=GOOGLE_CREDENTIALS_FILEPATH,
-        document_id=GOOGLE_SHEETS_TEST_DOCUMENT_ID
+        document_id=GOOGLE_SHEETS_TEST_DOCUMENT_ID,
     )
     assert ss.document_id == GOOGLE_SHEETS_TEST_DOCUMENT_ID
 
@@ -41,10 +42,11 @@ def model_context(service):
 
     yield "Using test document!"
 
+
 @pytest.fixture()
 def test_client(model_context):
     """Test client for the flask web application.
-        Uses the model context and therefore runs against the test database.
+    Uses the model context and therefore runs against the test database.
     """
     app = create_app()
     app.config.update({"TESTING": True})

@@ -1,7 +1,7 @@
-
-#from app.db import BaseModel
+# -*- coding: utf-8 -*-
+# from app.db import BaseModel
 #
-#class Book(BaseModel):
+# class Book(BaseModel):
 #
 #    SHEET_NAME = "books"
 #
@@ -23,7 +23,7 @@
 #    ]
 #
 #
-#if __name__ == "__main__":
+# if __name__ == "__main__":
 #
 #    books = Book.all()
 #    print("FOUND", len(books), "BOOKS")

@@ -1,0 +1,21 @@
+[project]
+name = ""
+version = "0.0.1"
+requires-python = ">=3.12"
+dependencies = [
+    "python-dotenv",
+    "flask",
+    "authlib",
+    "gspread",
+    "gspread-models",
+    "gunicorn",
+    "pytest",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+]
